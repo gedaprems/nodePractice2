@@ -4,7 +4,7 @@ const {weatherStackApiToken} = require('../node_modules/apiToken')
 const forecast = (longitude, latitude, callback)=>{
     const url = 'http://api.weatherstack.com/current?access_key='+weatherStackApiToken+'&query='+latitude+','+longitude
 
-    request({url: url, json: true}, (error,response)=>{
+    request({url, json: true}, (error,response)=>{
         if(error){
             callback("Unable to connect to location service!", undefined)
         }
